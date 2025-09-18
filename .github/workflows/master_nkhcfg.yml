@@ -1,13 +1,15 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
+# Optimized GitHub Actions workflow for Next.js deployment to Azure Web App
 name: Build and deploy Next.js app to Azure Web App - nkhcfg
 
 on:
   push:
     branches:
-      - master
+      - master # Change to 'master' if that's your default branch
   workflow_dispatch:
+
+env:
+  NODE_VERSION: "22.x"
+  AZURE_WEBAPP_NAME: "nkhcfg"
 
 jobs:
   build:
@@ -16,37 +18,36 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js version
+      - name: Set up Node.js
         uses: actions/setup-node@v4 # Updated to v4
         with:
-          node-version: "22.x"
-          cache: "npm" # Added npm caching
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
 
       - name: Install dependencies
-        run: npm ci # More reliable than npm install
+        run: npm ci # Faster than npm install
+
+      - name: Run linting
+        run: npm run lint
 
       - name: Build Next.js application
         run: npm run build
         env:
           NODE_ENV: production
 
-      - name: Run linting
-        run: npm run lint --if-present
-
-      - name: Create optimized deployment package
+      - name: Create deployment package
         run: |
           # Create deployment directory
           mkdir deployment-package
 
-          # Copy built Next.js application
+          # Copy built application
           cp -r .next deployment-package/
 
-          # Copy public assets
-          if [ -d "public" ]; then
-            cp -r public deployment-package/
-          fi
+          # Copy static assets
+          cp -r public deployment-package/ || echo "No public directory found"
 
           # Copy essential files
           cp package.json deployment-package/
@@ -54,21 +55,22 @@ jobs:
           cp server.js deployment-package/
           cp web.config deployment-package/
 
+          # Copy source code (needed for custom server)
+          cp -r app deployment-package/
+          cp -r components deployment-package/
+
           # Copy config files
           cp next.config.js deployment-package/
           cp tailwind.config.js deployment-package/
           cp postcss.config.js deployment-package/
           cp tsconfig.json deployment-package/
+          cp next-env.d.ts deployment-package/
 
-          # Copy source directories
-          cp -r app deployment-package/
-          cp -r components deployment-package/
-
-      - name: Upload artifact for deployment job
+      - name: Upload artifact for deployment
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: deployment-package/ # Only upload optimized package
+          path: deployment-package/ # Only upload what's needed
 
   deploy:
     runs-on: ubuntu-latest
@@ -76,6 +78,10 @@ jobs:
     permissions:
       id-token: write
       contents: read
+
+    environment:
+      name: "Production"
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
       - name: Download artifact from build job
@@ -90,15 +96,10 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_ACF8CB99DDA146679E8338D66ECCD967 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_5C4654F5D61F4EA09FCE1751AAB65A9B }}
 
-      - name: "Deploy to Azure Web App"
+      - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: "nkhcfg"
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
           slot-name: "Production"
           package: .
-
-      - name: "Post-deployment verification"
-        run: |
-          echo "✅ Deployment completed successfully!"
-          echo "🌐 App URL: https://nkhcfg.azurewebsites.net"
