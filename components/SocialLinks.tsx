@@ -55,7 +55,7 @@ export function SocialLinks() {
       colorClass: "text-red-600",
     },
     {
-      href: "https://instagram.com/arbab_mustafa1",
+      href: "https://www.instagram.com/dev_arbab?igsh=MXR3eTRrMmtrYmwyaw==",
       icon: (
         <svg
           viewBox="0 0 24 24"
