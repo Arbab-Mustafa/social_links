@@ -3,35 +3,18 @@ import { ProfileHeader } from "@/components/ProfileHeader";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
+    <main className="h-screen bg-gradient-to-br from-white via-gray-50/30 to-purple-50/40 relative overflow-hidden flex items-center justify-center">
+      {/* Subtle background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 right-5 sm:top-20 sm:right-20 w-48 h-48 sm:w-72 sm:h-72 bg-purple-100/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-5 sm:bottom-20 sm:left-20 w-64 h-64 sm:w-96 sm:h-96 bg-blue-100/15 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-56 h-56 sm:w-80 sm:h-80 bg-pink-100/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-8 max-h-screen overflow-hidden">
+        <div className="max-w-4xl mx-auto flex flex-col justify-center items-center h-screen space-y-6 sm:space-y-8">
           <ProfileHeader />
-
-          <div className="mt-12">
-            <SocialLinks />
-          </div>
-
-          {/* Additional info section */}
-          <div className="mt-16 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-gray-700">
-            <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">
-              About Me
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 text-center leading-relaxed max-w-2xl mx-auto">
-              Welcome to my digital space! I'm a Software Engineer and FullStack
-              Developer from Islamabad, Pakistan. Currently focusing on DevOps &
-              in-depth Software Engineering concepts. Check out my portfolio at{" "}
-              <a
-                href="https://www.arbabmustafa.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 dark:text-blue-400 hover:underline"
-              >
-                arbabmustafa.com
-              </a>
-              and connect with me across all platforms!
-            </p>
-          </div>
+          <SocialLinks />
         </div>
       </div>
     </main>
