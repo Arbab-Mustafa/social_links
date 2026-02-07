@@ -11,11 +11,11 @@ function SocialLink({ href, icon, label, colorClass }: SocialLinkProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-white/80 backdrop-blur-sm hover:bg-white transition-all duration-300 hover:scale-110 hover:-translate-y-1 sm:hover:-translate-y-2 shadow-lg hover:shadow-xl hover:shadow-purple-200/50 border border-white/60 overflow-hidden"
+      className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-white/80 backdrop-blur-sm hover:bg-white transition-all duration-300 hover:scale-110 hover:-translate-y-1 sm:hover:-translate-y-2 shadow-lg hover:shadow-xl hover:shadow-emerald-200/60 border border-white/60 overflow-hidden"
       aria-label={label}
     >
       {/* Background gradient on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 via-transparent to-indigo-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 via-transparent to-green-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
       {/* Icon */}
       <div
@@ -26,9 +26,9 @@ function SocialLink({ href, icon, label, colorClass }: SocialLinkProps) {
 
       {/* Enhanced tooltip */}
       <div className="absolute -top-14 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-20">
-        <div className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-sm font-medium px-4 py-2 rounded-xl whitespace-nowrap shadow-xl backdrop-blur-sm">
+        <div className="bg-gradient-to-r from-emerald-500 to-green-500 text-white text-sm font-medium px-4 py-2 rounded-xl whitespace-nowrap shadow-xl backdrop-blur-sm">
           {label}
-          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-purple-500"></div>
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-emerald-500"></div>
         </div>
       </div>
 
@@ -157,18 +157,18 @@ export function SocialLinks() {
   return (
     <div className="relative group">
       {/* Modern glass container */}
-      <div className="relative bg-white/70 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl shadow-purple-500/5 border border-white/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10">
+      <div className="relative bg-white/70 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl shadow-emerald-500/10 border border-white/50 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/20">
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-indigo-50/20 rounded-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-emerald-50/30 rounded-3xl"></div>
 
         {/* Content */}
         <div className="relative z-10">
           {/* Enhanced title */}
           <div className="text-center mb-6 sm:mb-8">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 bg-gradient-to-r from-slate-700 via-purple-600 to-indigo-500 bg-clip-text text-transparent">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 bg-gradient-to-r from-slate-700 via-emerald-600 to-green-500 bg-clip-text text-transparent">
               Connect With Me
             </h2>
-            <div className="w-10 sm:w-12 h-0.5 bg-gradient-to-r from-purple-400 to-indigo-400 mx-auto rounded-full"></div>
+            <div className="w-10 sm:w-12 h-0.5 bg-gradient-to-r from-emerald-400 to-green-400 mx-auto rounded-full"></div>
           </div>
 
           {/* Enhanced grid */}
@@ -188,7 +188,7 @@ export function SocialLinks() {
           <div className="text-center">
             <p className="text-xs sm:text-sm md:text-base text-gray-600 font-medium px-4">
               Click on any platform to follow me and
-              <span className="text-purple-500 font-semibold">
+              <span className="text-emerald-600 font-semibold">
                 {" "}
                 stay updated!
               </span>
@@ -197,8 +197,8 @@ export function SocialLinks() {
         </div>
 
         {/* Subtle floating elements */}
-        <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full opacity-40 animate-pulse delay-500"></div>
-        <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-indigo-200 to-blue-200 rounded-full opacity-30 animate-pulse delay-1000"></div>
+        <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-br from-emerald-200 to-green-200 rounded-full opacity-40 animate-pulse delay-500"></div>
+        <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-green-200 to-lime-200 rounded-full opacity-30 animate-pulse delay-1000"></div>
       </div>
     </div>
   );
