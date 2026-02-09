@@ -4,13 +4,13 @@ A modern, responsive web application built with Next.js 14, React 18, and Tailwi
 
 ## Features
 
-- ⚡ **Next.js 14** - Latest version with App Router
-- ⚛️ **React 18** - Modern React with hooks and concurrent features
-- 🎨 **Tailwind CSS** - Utility-first CSS framework
-- 📱 **Responsive Design** - Mobile-first approach
-- 🌙 **Dark Mode** - Automatic dark mode support
-- 📝 **TypeScript** - Type-safe development
-- 🚀 **Performance Optimized** - Server-side rendering and static generation
+-  **Next.js 14** - Latest version with App Router
+-  **React 18** - Modern React with hooks and concurrent features
+-  **Tailwind CSS** - Utility-first CSS framework
+-  **Responsive Design** - Mobile-first approach
+-  **Dark Mode** - Automatic dark mode support
+-  **TypeScript** - Type-safe development
+-  **Performance Optimized** - Server-side rendering and static generation
 
 ## Prerequisites
 
@@ -106,3 +106,4 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+
