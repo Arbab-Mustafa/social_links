@@ -31,7 +31,7 @@ A modern, responsive web application built with Next.js 14, React 18, and Tailwi
    npm run dev
    ```
 
-3. **Open your browser:**
+ 3. **Open your browser:**
    Navigate to [http://localhost:3000](http://localhost:3000) to see your application.
 
 ## Available Scripts
@@ -106,6 +106,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+
 
 
 
