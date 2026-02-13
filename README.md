@@ -1,4 +1,4 @@
-  # Simple Web App
+   # Simple Web App
 
 A modern, responsive web application built with Next.js 14, React 18, and Tailwind CSS. This project demonstrates modern web development practices with TypeScript support, beautiful UI components, and optimal performance.
 
@@ -106,6 +106,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+
 
 
 
