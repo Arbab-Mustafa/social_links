@@ -16,7 +16,7 @@ export function ProfileHeader() {
           {/* Title with accent */}
           <div className="mb-4 sm:mb-6">
             <p className="text-base sm:text-lg md:text-xl font-semibold text-emerald-600 mb-2">
-              Software Engineer & FullStack Developer
+               Building AI Products for Supply Chain & Logistics SaaS
             </p>
             <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-emerald-400 to-green-400 mx-auto rounded-full"></div>
           </div>
