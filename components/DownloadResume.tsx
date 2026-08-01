@@ -3,8 +3,8 @@
 export function DownloadResume() {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Arbab-Mustafa-Full-Stack-MERN-Python.pdf";
-    link.download = "Arbab-Mustafa-Full-Stack-MERN-Python.pdf";
+    link.href = "/Arbab_FullStack_AI_Remote_Global.pdf";
+    link.download = "/Arbab_FullStack_AI_Remote_Global.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
