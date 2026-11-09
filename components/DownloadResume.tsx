@@ -3,8 +3,8 @@
 export function DownloadResume() {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Arbab_FullStack_AI_Remote_Global.pdf";
-    link.download = "/Arbab_FullStack_AI_Remote_Global.pdf";
+    link.href = "/Arbab_Mustafa_CV_Remote_Global.pdf";
+    link.download = "/Arbab_Mustafa_CV_Remote_Global.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
